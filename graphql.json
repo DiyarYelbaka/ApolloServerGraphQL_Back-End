@@ -1,0 +1,9 @@
+input UpdateCommentInput{
+    text:String
+    post_id:ID
+    user_id:ID
+}
+
+type DeleteAllOutput{
+    count:ID!
+}

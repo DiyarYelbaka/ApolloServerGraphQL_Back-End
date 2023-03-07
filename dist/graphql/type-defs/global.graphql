@@ -1,0 +1,8 @@
+type DeleteAllOutput{
+    count:ID!
+}
+
+
+        
+      
+      
