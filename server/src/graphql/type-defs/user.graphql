@@ -1,0 +1,46 @@
+ # User
+        type User {
+            _id: ID!
+            fullName: String!
+            age:Int!
+            profile_photo:String
+            posts:[Post!]!
+            comments: [Comment!]!
+        }
+
+        input CreateUserInput{
+            fullName:String!
+            profile_photo:String
+            age:Int!
+        }
+
+        input UpdateUserInput{
+            fullName:String
+            profile_photo:String
+            age:Int
+        }
+
+
+        #Query
+        type Query {
+            users: [User!]!
+            user(id: ID!): User!
+        }
+        
+        #Mutation
+        type Mutation{
+            #User
+            createUser(data:CreateUserInput!): User!
+            updateUser(id:ID!, data:UpdateUserInput!): User!
+            deleteUser(id:ID!): User!
+            deleteAllUser:DeleteAllOutput!
+        }
+
+        type Subscription {
+            #User
+            userCreated:User!
+            userUpdated:User!
+            userDeleted:User!
+            
+          }
+      

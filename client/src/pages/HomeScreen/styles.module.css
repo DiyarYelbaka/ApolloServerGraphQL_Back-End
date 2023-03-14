@@ -1,0 +1,10 @@
+.itemDesc{
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    line-height: 1.5715;
+    
+}
+
+.itemDesc:hover{
+    color: rgba(0, 0, 0, 0.6);
+}

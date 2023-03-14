@@ -1,0 +1,58 @@
+ # User
+
+        #Post
+        type Post {
+            _id: ID!
+            title: String!
+            description: String!
+            sort_description: String
+            # user_id: ID!
+            user: User!
+            comments: [Comment!]!
+            cover:String
+        }
+
+        input CreatePostInput{
+            title:String!
+            description: String
+            sort_description: String
+            user:ID
+            cover:String
+        }
+
+        input UpdatePostInput{
+            title:String
+            description: String
+            sort_description: String
+            user_id:ID
+             cover:String
+        }
+
+      
+        #Query
+        type Query {
+
+            posts: [Post!]!
+            post(id: ID!): Post!
+        }
+        
+        #Mutation
+        type Mutation{
+ 
+            #Post
+            createPost(data:CreatePostInput!): Post!
+            updatePost(id:ID!,data:UpdatePostInput!): Post!
+            deletePost(id:ID!): Post!
+            deleteAllPosts:DeleteAllOutput!
+          
+        }
+
+        type Subscription {
+        
+            postCreated(user_id:ID):Post!
+            postUpdated:Post!
+            postDeleted:Post!
+       
+            
+     }
+      
